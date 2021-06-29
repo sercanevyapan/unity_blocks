@@ -19,21 +19,21 @@ public class Shoot : MonoBehaviour
 
     public GameObject ballPrefab;
     public GameObject ballsContainer;
-    
+
     void Start()
     {
-        Dots = GameObject.Find("dot");
+        Dots = GameObject.Find("Dots");
         projectilesPath = Dots.transform.Cast<Transform>().ToList().ConvertAll(t => t.gameObject);
-        for (int i = 0; i < projectilesPath.Count; i++)
-        {
-            projectilesPath[i].GetComponent<Renderer>().enabled = false;
-        }
+        HideDots();
     }
 
-    
+
     void Update()
     {
+        ballBody = ballPrefab.GetComponent<Rigidbody2D>();
+
         Aim();
+        Rotate();
     }
 
     void Aim()
@@ -41,21 +41,72 @@ public class Shoot : MonoBehaviour
         if (shoot)
             return;
 
-        if (Input.GetAxis("Fire1")==1)
+        if (Input.GetAxis("Fire1") == 1)
         {
             if (!aiming)
             {
-                //call
+                aiming = true;
+                startPos = Input.mousePosition;
             }
             else
             {
-                //Aim CAl path
+                PathCalculation();
             }
         }
-        else
+        else if (aiming && !shoot)
         {
+            aiming = false;
+            HideDots();
             //Shoot
         }
-        
+
+    }
+
+    Vector2 ShootForce(Vector3 force)
+    {
+        return (new Vector2(startPos.x, startPos.y) - new Vector2(force.x, force.y)) * power;
+    }
+
+    Vector2 DotPath(Vector2 startP, Vector2 startVel, float t)
+    {
+        return startP + startVel * t + 0.5f * Physics2D.gravity * t * t;
+    }
+
+    void PathCalculation()
+    {
+        Vector2 vel = ShootForce(Input.mousePosition) * Time.fixedDeltaTime / ballBody.mass;
+
+        for (int i = 0; i < projectilesPath.Count; i++)
+        {
+            projectilesPath[i].GetComponent<Renderer>().enabled = true;
+            float t = i / 15f;
+            Vector3 point = DotPath(transform.position, vel, t);
+            point.z = 1;
+            projectilesPath[i].transform.position = point;
+        }
+    }
+
+    void ShowDots()
+    {
+        for (int i = 0; i < projectilesPath.Count; i++)
+        {
+            projectilesPath[i].GetComponent<Renderer>().enabled = true;
+        }
+    }
+
+    void HideDots()
+    {
+        for (int i = 0; i < projectilesPath.Count; i++)
+        {
+            projectilesPath[i].GetComponent<Renderer>().enabled = false;
+        }
+    }
+
+    void Rotate()
+    {
+        Vector2 dir = GameObject.Find("dot (1)").transform.position - transform.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
     }
 }
