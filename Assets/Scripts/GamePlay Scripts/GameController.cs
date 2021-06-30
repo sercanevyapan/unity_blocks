@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-
+    private ShotCountText shotCountText;
    
 
     public GameObject[] block;
@@ -18,6 +18,12 @@ public class GameController : MonoBehaviour
     private Vector2 level2Pos;
 
     public int shotCount;
+    
+
+    private void Awake()
+    {
+        shotCountText = GameObject.Find("ShotCountText").GetComponent<ShotCountText>();
+    }
 
 
     void Start()
@@ -116,5 +122,28 @@ public class GameController : MonoBehaviour
         {
             Destroy(balls[i]);
         }
+    }
+
+    public void CheckShotCount()
+    {
+        if (shotCount == 1)
+        {
+            shotCountText.SetTopText("SHOT");
+            shotCountText.SetBottomText("1/3");
+            shotCountText.Flash();
+        }
+        if (shotCount == 2)
+        {
+            shotCountText.SetTopText("SHOT");
+            shotCountText.SetBottomText("2/3");
+            shotCountText.Flash();
+        }
+        if (shotCount == 3)
+        {
+            shotCountText.SetTopText("SHOT");
+            shotCountText.SetBottomText("FINAL");
+            shotCountText.Flash();
+        }
+       
     }
 }

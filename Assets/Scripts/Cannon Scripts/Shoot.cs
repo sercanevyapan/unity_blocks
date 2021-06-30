@@ -59,6 +59,7 @@ public class Shoot : MonoBehaviour
             {
                 aiming = true;
                 startPos = Input.mousePosition;
+                gc.CheckShotCount();
             }
             else
             {
