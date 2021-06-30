@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
+    private GameController gc;
+
     public float power = 2;
     private int dots = 15;
 
@@ -20,9 +22,15 @@ public class Shoot : MonoBehaviour
     public GameObject ballPrefab;
     public GameObject ballsContainer;
 
+    void Awake()
+    {
+        gc = GameObject.Find("GameController").GetComponent<GameController>();
+        Dots = GameObject.Find("Dots");
+    }
+
     void Start()
     {
-        Dots = GameObject.Find("Dots");
+        
         projectilesPath = Dots.transform.Cast<Transform>().ToList().ConvertAll(t => t.gameObject);
         HideDots();
     }
@@ -32,8 +40,12 @@ public class Shoot : MonoBehaviour
     {
         ballBody = ballPrefab.GetComponent<Rigidbody2D>();
 
-        Aim();
-        Rotate();
+        if (gc.shotCount <= 3)
+        {
+            Aim();
+            Rotate();
+        }
+      
     }
 
     void Aim()
@@ -56,9 +68,10 @@ public class Shoot : MonoBehaviour
         else if (aiming && !shoot)
         {
             aiming = false;
-            StartCoroutine(Shoots());
             HideDots();
-            Camera.main.GetComponent<CameraTransitions>().RotateCameraToSide();
+            StartCoroutine(Shoots());
+            if (gc.shotCount==1)
+                Camera.main.GetComponent<CameraTransitions>().RotateCameraToSide();
         }
 
     }
@@ -122,6 +135,7 @@ public class Shoot : MonoBehaviour
             ballBody = ball.GetComponent<Rigidbody2D>();
             ballBody.AddForce(ShootForce(Input.mousePosition));
         }
-        
+
+        gc.shotCount++;
     }
 }
