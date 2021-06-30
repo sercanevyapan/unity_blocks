@@ -29,9 +29,11 @@ public class Block : MonoBehaviour
         if(target.collider.name == "Ball" && count > 0)
         {
             count--;
+            Camera.main.GetComponent<CameraTransitions>().Shake();
             if(count == 0)
             {
                 Destroy(gameObject);
+                Camera.main.GetComponent<CameraTransitions>().MediumShake();
             }
         }
     }

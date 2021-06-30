@@ -32,6 +32,9 @@ public class GameController : MonoBehaviour
 
     void SpawnNewLevel(int numberLevel1, int numberLevel2, int min, int max)
     {
+
+        Camera.main.GetComponent<CameraTransitions>().RotateCameraToFront();
+
         level1Pos = new Vector2(3.5f, 1);
         level2Pos = new Vector2(3.5f, -3.4f);
 
