@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e77ed0866d2ae41b328f6753f4fa70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countText: {fileID: 21759}
 --- !u!1 &269
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,6 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e77ed0866d2ae41b328f6753f4fa70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countText: {fileID: 21149}
 --- !u!1 &1262
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,6 +625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e77ed0866d2ae41b328f6753f4fa70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countText: {fileID: 23194}
 --- !u!1 &1271
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,6 +820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e77ed0866d2ae41b328f6753f4fa70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countText: {fileID: 21836}
 --- !u!1 &1622
 GameObject:
   m_ObjectHideFlags: 0
@@ -2013,6 +2017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e77ed0866d2ae41b328f6753f4fa70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countText: {fileID: 21194}
 --- !u!1 &3753
 GameObject:
   m_ObjectHideFlags: 0
@@ -2207,6 +2212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e77ed0866d2ae41b328f6753f4fa70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countText: {fileID: 22868}
 --- !u!1 &3872
 GameObject:
   m_ObjectHideFlags: 0
@@ -2303,6 +2309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e77ed0866d2ae41b328f6753f4fa70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countText: {fileID: 23821}
 --- !u!1 &4089
 GameObject:
   m_ObjectHideFlags: 0
@@ -2657,6 +2664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e77ed0866d2ae41b328f6753f4fa70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countText: {fileID: 22843}
 --- !u!1 &4614
 GameObject:
   m_ObjectHideFlags: 0
@@ -2751,6 +2759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e77ed0866d2ae41b328f6753f4fa70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countText: {fileID: 20855}
 --- !u!1 &4898
 GameObject:
   m_ObjectHideFlags: 0
