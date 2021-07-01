@@ -21,12 +21,15 @@ public class GameController : MonoBehaviour
 
     public int shotCount;
     public int ballsCount;
+
+    private GameObject ballsContainer;
     
 
     private void Awake()
     {
         shotCountText = GameObject.Find("ShotCountText").GetComponent<ShotCountText>();
         ballsCountText = GameObject.Find("BallCountText").GetComponent<Text>();
+        ballsContainer = GameObject.Find("BallsContainer");
     }
 
 
@@ -40,11 +43,19 @@ public class GameController : MonoBehaviour
         Physics2D.gravity = new Vector2(0, -17);
 
         SpawnLevel();
+        GameObject.Find("Cannon").GetComponent<Animator>().SetBool("MoveIn", true);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(ballsContainer.transform.childCount==0 && shotCount == 4)
+        {
+            print("Game Over");
+            GameObject.Find("Cannon").GetComponent<Animator>().SetBool("MoveIn", false);
+        }
+
+
         CheckBlocks();
     }
 
