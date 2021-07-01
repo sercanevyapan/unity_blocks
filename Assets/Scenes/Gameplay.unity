@@ -575,6 +575,7 @@ MonoBehaviour:
   - {fileID: 5447, guid: b2cff1ab86bb479fa86d5dd4b8975c4b, type: 3}
   - {fileID: 2684, guid: 740e756a7b6d42e9b96440b3e3a47faa, type: 3}
   shotCount: 0
+  score: 0
   ballsCount: 0
   gameOver: {fileID: 1709687845}
 --- !u!4 &252368005
@@ -2863,7 +2864,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adfada3bfd3eb104b8ba1e12ccf890b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 696616979}
+  pauseMenu: {fileID: 296850638}
+  scoreText: {fileID: 383686479}
+  bestScoreText: {fileID: 160132256}
 --- !u!1 &803442785
 GameObject:
   m_ObjectHideFlags: 0
