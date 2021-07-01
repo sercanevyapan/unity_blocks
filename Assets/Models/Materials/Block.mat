@@ -4,19 +4,57 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 'Block'
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Block
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
-  disabledShaderPasses:
+  disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
@@ -26,11 +64,11 @@ Material:
     - _FogEnd: 0
     - _FogStart: -5
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0.582
     - _GlossyReflections: 1
     - _Glow: 1.19
     - _GradientStrength: 1
-    - _Metallic: 0
+    - _Metallic: 0.323
     - _Middle: 1
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -47,7 +85,7 @@ Material:
     - _yPosLow: -2
     m_Colors:
     - _BottomColor: {r: 0.2283737, g: 0.4484787, b: 0.9705882, a: 1}
-    - _Color: {r: 0.9558824, g: 0.4638841, b: 0.4638841, a: 1}
+    - _Color: {r: 0.9528302, g: 0.58807343, b: 0.17438585, a: 1}
     - _Color2: {r: 0.9411765, g: 0.6345782, b: 0.4359862, a: 1}
     - _ColorBot: {r: 0.3005515, g: 0.8014706, b: 0.4905553, a: 1}
     - _ColorHigh: {r: 0.9632353, g: 0.439122, b: 0.439122, a: 1}
@@ -61,3 +99,4 @@ Material:
     - _FogColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 1, g: 1, b: 1, a: 0.984}
     - _TopColor: {r: 1, g: 0.4338235, b: 0.4338235, a: 1}
+  m_BuildTextureStacks: []
