@@ -8,7 +8,7 @@ public class Shoot : MonoBehaviour
     private GameController gc;
 
     public float power = 2;
-    private int dots = 15;
+    
 
     private Vector2 startPos;
 
