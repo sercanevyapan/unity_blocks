@@ -10,6 +10,13 @@ public class Block : MonoBehaviour
 
     public Text countText;
 
+    private AudioSource boundSound;
+
+    private void Awake()
+    {
+        boundSound = GameObject.Find("BoundSound").GetComponent<AudioSource>();
+    }
+
     void Start()
     {
         
@@ -35,6 +42,7 @@ public class Block : MonoBehaviour
             count--;
             Camera.main.GetComponent<CameraTransitions>().Shake();
             countText.text = count.ToString();
+            boundSound.Play();
             if(count == 0)
             {
                 Destroy(gameObject);

@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour
     public int ballsCount;
 
     private GameObject ballsContainer;
+    public GameObject gameOver;
     
 
     private void Awake()
@@ -51,7 +52,7 @@ public class GameController : MonoBehaviour
     {
         if(ballsContainer.transform.childCount==0 && shotCount == 4)
         {
-            print("Game Over");
+            gameOver.SetActive(true);
             GameObject.Find("Cannon").GetComponent<Animator>().SetBool("MoveIn", false);
         }
 
